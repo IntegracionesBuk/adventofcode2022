@@ -1,3 +1,5 @@
+# El link del ejercicio 1 esta a continuación: https://adventofcode.com/2022/day/1
+
 calories = [
   [5474,
   4920,
@@ -2023,7 +2025,5 @@ end
 #save_calories = total_calories
 
 #the_first_three = total_calories.max(3).sum
-
-
 
 puts total_calories(calories ,1)
