@@ -2245,8 +2245,8 @@ calories = [
 ]
 
 # Parte uno del ejercicio
-# Calcula la suma total de calorías de una lista de comidas.
-# return [Integer] La suma total de calorías de todas las comidas
+# @param [Array] calories
+# @return [Integer] La suma total de calorías del elfo con más calorías
 def total_calories(calories)
   puts '######## Este es el resultado del ejercicio n°1 ########'
   calories.map(&:sum).sum
