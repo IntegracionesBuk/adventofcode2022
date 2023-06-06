@@ -1,1 +1,1 @@
-# adventofcode2022
+# Ejercicio 3 parte 1 adventofcode2022
