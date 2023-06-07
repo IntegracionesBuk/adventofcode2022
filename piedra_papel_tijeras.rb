@@ -2561,3 +2561,30 @@ rompecabezas.each do |juego|
   result2 += pelea(juego)
 end
 puts result2
+
+
+JUEGO = {
+  'A X' => 3,
+  'B Y' => 5,
+  'C Z' => 7,
+  'A Y' => 4,
+  'A Z' => 8,
+  'B X' => 1,
+  'B Z' => 9,
+  'C X' => 2,
+  'C Y' => 6
+}.freeze
+
+# ejercicio 2 cachipun
+#
+# @param [Array] rompecabezas
+# @return [Integer] puntaje total
+def pelea_refactor(rompecabezas)
+  rompecabezas.sum { |juego| JUEGO[juego] }
+end
+
+puts "El resultado es #{pelea_refactor(rompecabezas)}"
+
+rompecabezas_map_puntajes = rompecabezas.map { |juego| JUEGO[juego] }.sum
+
+puts "Rompecabeza transformado es: #{rompecabezas_map_puntajes}"
