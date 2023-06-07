@@ -1,5 +1,7 @@
-# Ejercicio 3 parte 1
+# frozen_string_literal: true
 
+# Ejercicio 3 parte 1 link: https://adventofcode.com/2022/day/3
+# Se asigna y freezea un arreglo (mochilas) con el input adventofcode2022 Ejercicio 3 parte 1
 mochilas =
   %w[
     fzmmmfwDWFzlQQqjCQjDGnqq
@@ -302,8 +304,9 @@ mochilas =
     NDrBlSmrFBlbbJllmtHHwhNNhZztqHVRzQ
     CMTCGLcvvtfCdCcCvCnMTMcTzjHwVZVRLjRRjQjRHRwzwjVH
     dfGdgGMGPggnvfvgbtDtlSJPDSFJPslJ
-  ]
+  ].freeze
 
+# Hash de prioridades
 prioridades = {
   'a' => 1,
   'b' => 2,
@@ -357,16 +360,17 @@ prioridades = {
   'X' => 50,
   'Y' => 51,
   'Z' => 52
-}
+}.freeze
 
-total = 0
-
-mochilas.each do |mochila|
-  elemento_compartido = mochila[0, mochila.length / 2].chars & mochila[mochila.length / 2, mochila.length].chars
-
-  elemento_compartido.each do |elemento|
-    total += prioridades[elemento] if prioridades.key?(elemento)
+# Metodo que recibe como parametro un arreglo del input (mochilas) y un hash de prioridades
+# y retorna la suma de las prioridades de las mochilas
+def calcular_prioridad_mochila(mochilas, prioridades)
+  total = mochilas.sum do |mochila|
+    elemento_compartido = mochila[0, mochila.length / 2].chars & mochila[mochila.length / 2, mochila.length].chars
+    prioridades[elemento_compartido.join] if prioridades.key?(elemento_compartido.join)
   end
+  puts total
 end
 
-puts total
+# llamada del metodo que retorna el resultado del ejercicio 3 parte 1
+calcular_prioridad_mochila(mochilas, prioridades)
